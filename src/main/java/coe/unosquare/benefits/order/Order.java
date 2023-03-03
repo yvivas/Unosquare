@@ -27,11 +27,20 @@ public class Order {
         products = productsMap;
     }
 
+    /**
+     * Get the product list in the Order.
+     * @return Map Products
+     */
     public Map<Product, Integer>  getProducts(){
         return products;
     }
 
-
+    /**
+     * Pay Order.
+     *
+     * @param discount percentage of discount to be applied in the purchase
+     * @return The amount of money to be paid for the customer + discount
+     */
     public Double pay( Double discount) {
         return Payment.pay(products, discount);
     }

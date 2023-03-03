@@ -46,27 +46,6 @@ public final class ProductGenerator {
         return products;
     }
 
-    public static Map<Product, Integer> generateProductsbyAmmount(final Double expectedPrice) {
-        HashMap<Product, Integer> products = new HashMap<>();
-        int maxValue = 100;
-        Double accumulatedPrice = 0.0d;
-        for(int i = 0;i <= maxValue;i++){
-            Double value =  Double.parseDouble(new DecimalFormat("0.00").format(new Random().nextDouble() * 10.00));
-            int type = new Random().nextInt(3) + 1 ;
-            Product product = new Product( "Product " + i,
-                    value
-                    ,type);
-            products.put(product,1);
-            accumulatedPrice += value;
-            if(accumulatedPrice >= expectedPrice ){
-                break;
-            }
-        }
-
-        return products;
-    }
-
-
     /**
      * Generate products map.
      *
